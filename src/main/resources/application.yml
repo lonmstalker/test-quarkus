@@ -1,0 +1,17 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+    username: postgres
+    password: postgres
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/quarkus_test
+    reactive:
+      url: postgresql://localhost:5432/quarkus_test
+      max-size: 10
+  liquibase:
+    migrate-at-start: true
+    change-log: db/master.yml
+  devservices:
+    enabled: false
+  swagger-ui:
+    always-include: true

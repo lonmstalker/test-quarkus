@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: "added test model"
+      author: "lonmstalker"
+      changes:
+        sql:
+          - sql:
+              "
+              CREATE TABLE test_model (
+                id   UUID         PRIMARY KEY,
+                name VARCHAR(100)
+              )
+             "
+
+  - changeSet:
+      id: "added related test model"
+      author: "lonmstalker"
+      changes:
+        sql:
+          - sql:
+              "
+              CREATE TABLE related_test_model (
+                id            UUID         PRIMARY KEY,
+                test_model_id UUID         REFERENCES test_model(id),
+                name          VARCHAR(100)
+              )
+             "
